@@ -1,0 +1,113 @@
+# Introduction & Installation (DATA1300)
+
+## What is Python?
+Python is a programming language.
+
+To run Python code, the computer needs a **Python interpreter**.
+The interpreter reads Python code line by line and executes it.
+
+---
+
+## Python versions
+- Python can have different versions installed (e.g. 3.11, 3.12, 3.13)
+- In this course we use **Python 3.13.x**
+- You can check the version with:
+
+```bash
+python3 --version
+or
+python3.13 --version
+What is pip?
+
+pip is the package manager for Python.
+
+It is used to install libraries (packages).
+
+Example:
+pip install requests
+or
+python3 -m pip install requests
+
+⸻
+
+What is a virtual environment (venv)?
+
+A virtual environment (venv) is an isolated Python environment
+created for one specific project.
+
+Why we use venv:
+	•	each project can have its own libraries
+	•	avoids conflicts between projects
+	•	best practice in Python development
+
+👉 One project = one virtual environment
+
+⸻
+
+Creating a new project (step by step)
+
+1. Create project folder (Terminal – macOS Terminal)
+mkdir my-project
+cd my-project
+2. Create a virtual environment
+python3 -m venv .venv
+This creates a folder called .venv inside the project.
+
+Activating the virtual environment
+
+macOS / Linux:
+source .venv/bin/activate
+After activation, you should see: (.venv)  at the beginning of the terminal line.
+This means the virtual environment is active. 
+What is bin?
+	•	bin = binaries
+	•	it contains executables like:
+	•	python
+	•	pip
+	•	activate
+
+When we run:
+source .venv/bin/activate
+we tell the shell to use Python from this virtual environment.
+
+⸻
+
+Opening the project in VS Code
+⚠️ One-time setup (only once on your computer):
+	•	Open VS Code
+	•	Cmd + Shift + P
+	•	Type: Shell Command: Install ‘code’ command in PATH
+	•	Confirm
+
+After that, code . works in the terminal, you just type: code .
+VS Code: select Python interpreter
+
+Inside VS Code:
+	•	Cmd + Shift + P
+	•	Python: Select Interpreter
+	•	choose Python 3.x (.venv)
+
+This connects VS Code to your virtual environment.
+
+⸻
+
+Creating Python files
+
+Two options:
+
+Option 1: in VS Code
+	•	Right-click on project folder
+	•	New File
+	•	Name it main.py or test1.py
+Option 2: in terminal
+touch main.py
+Running Python code
+
+In the VS Code terminal (venv must be active):
+python test1.py
+Installing libraries (if needed)
+
+Always install libraries after venv is activated:
+pip install package_name
+Example: pip install requests
+
