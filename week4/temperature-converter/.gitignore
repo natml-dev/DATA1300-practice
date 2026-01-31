@@ -1,0 +1,25 @@
+# virtual environment
+venv/
+env/
+ENV/
+
+# Python bitcode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+#IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+#OS
+.DS_Store
+Thumbs.db
+
+#Project
+.env
+config.local
+*.log
