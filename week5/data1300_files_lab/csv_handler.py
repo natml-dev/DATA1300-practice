@@ -78,5 +78,17 @@ def update_json_student(filename: str, name: str, new_grade: int) -> None:
     print(f"Updated {name} to grade {new_grade}")
 
 
+if __name__=="__main__":
+    print("\n--- Testing CSV Functions ---")
+    print("Before:", read_csv('data/students.csv'))
+    update_csv_student('data/students.csv', 'Alice', 90)
+    print("After:", read_csv('data/students.csv'))
+
+    print("\n--- Testing JSON Functions ---")
+    print("Before: ", read_json('data/students.json'))
+    update_json_student('data/students.json', 'Bob', 95)
+    print("After:", read_json('data/students.json'))
+
+
 
      
