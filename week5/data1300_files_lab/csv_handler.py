@@ -78,6 +78,28 @@ def update_json_student(filename: str, name: str, new_grade: int) -> None:
     print(f"Updated {name} to grade {new_grade}")
 
 
+def add_new_student_csv(filename:str, name:str, course:str, grade:int) -> None:
+    """
+    Add new students function
+    """
+    #read existing data
+    rows = read_csv(filename)
+    # create new student dictionary
+    new_student = {
+        "name" : name,
+        "course" : course,
+        "grade" : str(grade)
+    }
+    # append to a list
+    rows.append(new_student)
+    #rewrite the file
+    with open(filename, "w", newline="") as f:
+        writer=csv.DictWriter(f,fieldnames = ["name", "course", "grade"])
+        writer.writeheader()
+        writer.writerows(rows)
+
+    print(f"Added {name} to the CSV file.")
+
 if __name__=="__main__":
     print("\n--- Testing CSV Functions ---")
     print("Before:", read_csv('data/students.csv'))
@@ -88,6 +110,10 @@ if __name__=="__main__":
     print("Before: ", read_json('data/students.json'))
     update_json_student('data/students.json', 'Bob', 95)
     print("After:", read_json('data/students.json'))
+
+    print("\n--- Adding New Student ---")
+    add_new_student_csv('data/students.csv', "Dana", "Python", 88)
+    print("After Adding Dana:", read_csv('data/students.csv'))
 
 
 
