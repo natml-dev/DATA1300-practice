@@ -2,7 +2,7 @@
     {
         "name": "Alice",
         "course": "Python",
-        "grade": "85"
+        "grade": 85
     },
     {
         "name": "Bob",
@@ -12,6 +12,6 @@
     {
         "name": "Charlie",
         "course": "Data1300",
-        "grade": "78"
+        "grade": 78
     }
 ]
